@@ -24,7 +24,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
   // On mount, read saved preference or system preference
   useEffect(() => {
     const saved = localStorage.getItem("theme") as Theme | null;
-    const preferred = saved ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const preferred = saved ?? "light";
     setTheme(preferred);
     document.documentElement.classList.toggle("dark", preferred === "dark");
   }, []);
