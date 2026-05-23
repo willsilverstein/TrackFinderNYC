@@ -107,6 +107,7 @@ export default function HomePage() {
   const isDark = theme === "dark";
 
   const [center, setCenter] = useState<[number, number]>(DEFAULT_CENTER);
+  const [userLocation, setUserLocation] = useState<[number, number] | null>(null);
   const [geoState, setGeoState] = useState<GeoState>("idle");
   const [locationLabel, setLocationLabel] = useState<string>("New York City");
   const [tracks] = useState<Track[]>(MOCK_TRACKS);
@@ -124,6 +125,7 @@ export default function HomePage() {
         const lat = pos.coords.latitude;
         const lon = pos.coords.longitude;
         setCenter([lat, lon]);
+        setUserLocation([lat, lon]);
         setGeoState("granted");
         const label = await reverseGeocode(lat, lon);
         setLocationLabel(label);
@@ -250,6 +252,7 @@ export default function HomePage() {
           <TrackMap
             tracks={tracks}
             center={center}
+            userLocation={userLocation}
             activeTrackId={activeTrackId}
             onTrackClick={(t) => setActiveTrackId(t.id)}
             darkMode={isDark}

@@ -15,6 +15,7 @@ const ATTR_DARK =
 interface TrackMapProps {
   tracks: Track[];
   center: [number, number];
+  userLocation: [number, number] | null;
   activeTrackId?: string | null;
   onTrackClick?: (track: Track) => void;
   darkMode?: boolean;
@@ -23,6 +24,7 @@ interface TrackMapProps {
 export default function TrackMap({
   tracks,
   center,
+  userLocation,
   activeTrackId,
   onTrackClick,
   darkMode = false,
@@ -34,6 +36,8 @@ export default function TrackMap({
   const tileLayerRef = useRef<any>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const markersRef = useRef<Map<string, any>>(new Map());
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const userMarkerRef = useRef<any>(null);
 
   // Initialise the map once
   useEffect(() => {
@@ -63,21 +67,6 @@ export default function TrackMap({
       tile.addTo(map);
       tileLayerRef.current = tile;
 
-      // User location dot
-      const userIcon = L.divIcon({
-        className: "",
-        html: `<div style="
-          width:14px;height:14px;
-          background:#3b82f6;
-          border:3px solid #fff;
-          border-radius:50%;
-          box-shadow:0 2px 6px rgba(0,0,0,0.4);
-        "></div>`,
-        iconSize: [14, 14],
-        iconAnchor: [7, 7],
-      });
-      L.marker(center, { icon: userIcon }).addTo(map).bindPopup("<b>You are here</b>");
-
       leafletMap.current = map;
       addMarkers(L, map, tracks);
     });
@@ -91,6 +80,36 @@ export default function TrackMap({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Place / move / remove the user location dot whenever GPS coords change
+  useEffect(() => {
+    if (!leafletMap.current) return;
+    import("leaflet").then((L) => {
+      // Remove existing dot first
+      if (userMarkerRef.current) {
+        userMarkerRef.current.remove();
+        userMarkerRef.current = null;
+      }
+      // Only add a dot if we have a real GPS fix
+      if (!userLocation) return;
+      const userIcon = L.divIcon({
+        className: "",
+        html: `<div style="
+          width:14px;height:14px;
+          background:#3b82f6;
+          border:3px solid #fff;
+          border-radius:50%;
+          box-shadow:0 2px 6px rgba(0,0,0,0.4);
+        "></div>`,
+        iconSize: [14, 14],
+        iconAnchor: [7, 7],
+      });
+      userMarkerRef.current = L.marker(userLocation, { icon: userIcon })
+        .addTo(leafletMap.current)
+        .bindPopup("<b>You are here</b>");
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userLocation]);
 
   // Swap tile layer when darkMode changes
   useEffect(() => {
