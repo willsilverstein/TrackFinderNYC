@@ -57,7 +57,18 @@ export default function TrackMap({
         shadowUrl:     "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
       });
 
-      const map = L.map(mapRef.current, { center, zoom: 12, zoomControl: false });
+      const NYC_BOUNDS = L.latLngBounds(
+        L.latLng(40.477, -74.259), // SW corner
+        L.latLng(40.917, -73.700)  // NE corner
+      );
+      const map = L.map(mapRef.current, {
+        center,
+        zoom: 12,
+        zoomControl: false,
+        maxBounds: NYC_BOUNDS,
+        maxBoundsViscosity: 1.0, // hard stop — no rubber-banding outside bounds
+        minZoom: 10,             // prevent zooming out far enough to escape
+      });
       L.control.zoom({ position: "bottomright" }).addTo(map);
 
       const tile = L.tileLayer(darkMode ? TILE_DARK : TILE_LIGHT, {
