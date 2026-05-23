@@ -250,7 +250,7 @@ export default function HomePage() {
         {/* ── Map ── */}
         <div className="relative flex-1 min-w-0">
           <TrackMap
-            tracks={tracks}
+            tracks={displayTracks.map(({ track }) => track)}
             center={center}
             userLocation={userLocation}
             activeTrackId={activeTrackId}
