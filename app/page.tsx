@@ -112,7 +112,9 @@ export default function HomePage() {
   const [locationLabel, setLocationLabel] = useState<string>("New York City");
   const [tracks] = useState<Track[]>(MOCK_TRACKS);
   const [activeTrackId, setActiveTrackId] = useState<string | null>(null);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(() =>
+    typeof window !== "undefined" ? window.innerWidth >= 768 : true
+  );
   const [accessFilter, setAccessFilter] = useState<AccessFilter>("all");
   const [sortBy, setSortBy] = useState<SortBy>("distance");
 
