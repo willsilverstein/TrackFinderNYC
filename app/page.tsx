@@ -172,7 +172,7 @@ export default function HomePage() {
   }), [tracks]);
 
   return (
-    <div className="flex flex-col h-screen bg-white dark:bg-gray-900">
+    <div className="flex flex-col h-screen h-[100dvh] bg-white dark:bg-gray-900">
       {/* ── Header ── */}
       <header className="flex-shrink-0 h-14 flex items-center justify-between px-4 border-b border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-900 z-10">
         <div className="flex items-center gap-2">

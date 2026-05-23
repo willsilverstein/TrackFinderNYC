@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "TrackFinderNYC – Find Public Running Tracks Near You",
   description:
     "Discover public running tracks near you. Filter by surface, lighting, lanes and more.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
