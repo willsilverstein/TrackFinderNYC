@@ -85,18 +85,25 @@ function elementToTrack(
     autoTags.push("public");
   if (tags["surface:condition"] === "good") autoTags.push("good surface");
 
+  const accessType = tags.access === "private" ? "closed"
+    : tags.fee === "yes" ? "conditional"
+    : "open";
+
   return {
     id: `osm-${el.type}-${el.id}`,
     name,
     lat,
     lon,
     distance: Math.round(haversine(userLat, userLon, lat, lon) * 10) / 10,
-    rating: 0, // no rating from OSM — will come from Supabase later
+    rating: 0,
     reviewCount: 0,
+    reviewSummary: "",
     surface: parseSurface(tags.surface),
     lanes: lanesRaw,
     lighting: tags.lit === "yes" || tags.lighting === "yes" || null,
     hours: tags.opening_hours ?? null,
+    publicHours: tags.opening_hours ?? null,
+    publicAccessType: accessType,
     access: tags.access ?? "public",
     cost: tags.fee === "yes" ? tags.charge ?? "Paid" : "Free",
     tags: autoTags,
