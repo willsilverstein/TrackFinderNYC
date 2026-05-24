@@ -16,7 +16,6 @@ body {
   height: -webkit-fill-available;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 /* Fix Leaflet map inside flex containers */
