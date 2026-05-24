@@ -1034,6 +1034,32 @@ export const MOCK_TRACKS: Track[] = [
     osmId: 0,
   },
 
+  {
+    // Source: Community report (Reddit r/NYCrunning) + Dashing Whippets event booking
+    // Jacob K. Javits Athletic Field at George Washington High School, 549 Audubon Ave, Washington Heights, Manhattan 10040
+    // New synthetic track facility confirmed complete; Dashing Whippets track club has hosted meets here
+    // Gate was open to a community visitor; no official public access policy published as of May 2026
+    id: "mock-52",
+    reviewSummary: "A brand-new synthetic track at George Washington High School's Jacob K. Javits Athletic Field — one of the nicest facilities in Washington Heights. The Dashing Whippets running club has already hosted track meets here, which is a strong signal of legitimate access. A community visitor found the gate open with no one stopping entry. There's no official public access policy yet, so treat it as conditional: go, but be prepared to leave if a school event is taking over.",
+    name: "George Washington HS — Jacob K. Javits Athletic Field",
+    lat: 40.8501,
+    lon: -73.9346,
+    distance: 0.0,
+    rating: 4.0,
+    reviewCount: 6,
+    surface: "Synthetic",
+    lanes: 8,
+    lighting: null,
+    hours: "Unconfirmed — gate reported open; used by running clubs",
+    publicHours: "No official public access policy as of May 2026. Community reports indicate the gate is open outside of school programming and the facility is in use by local running clubs including the Dashing Whippets. Avoid weekday afternoons during the school year. Go early on weekends for the best chance of undisrupted access.",
+    publicAccessType: "conditional",
+    access: "yes",
+    cost: "Free",
+    tags: ["400m", "synthetic", "8-lane", "public school", "Washington Heights", "Manhattan", "new facility", "Dashing Whippets", "unconfirmed access"],
+    osmType: "way",
+    osmId: 0,
+  },
+
   // ── College tracks with conditional public access ──
 
   {
