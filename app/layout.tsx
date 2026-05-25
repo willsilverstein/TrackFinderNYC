@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     "400m track NYC",
     "free running track New York City",
   ],
+  verification: {
+    google: "sXY5ZVqiudgJcxIimdsPLUJFUCw9tQfEt3xvbJeY5oY",
+  },
   authors: [{ name: "TrackFinderNYC" }],
   creator: "TrackFinderNYC",
   openGraph: {
