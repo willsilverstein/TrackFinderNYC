@@ -21,6 +21,34 @@ export interface CityConfig {
 }
 
 const CITY_CONFIGS: Record<string, CityConfig> = {
+  landing: {
+    city: "landing",
+    displayName: "TrackFinder",
+    siteName: "TrackFinder",
+    siteUrl: "https://www.trackfindernyc.com",
+    mapCenter: [40.7128, -74.006],
+    mapZoom: 12,
+    mapBounds: [[40.477, -74.259], [40.917, -73.700]],
+    minZoom: 10,
+    tracks: [],
+    neighborhoods: [],
+    metaTitle: "TrackFinder – Find Public Running Tracks",
+    metaDescription:
+      "Find every public running track in New York City and Boston. Filter by surface, lighting, lanes, and public access hours. Free, no sign-up required.",
+    ogDescription:
+      "Find public running tracks in NYC and Boston. Surface, lighting, lane counts, and access hours for every outdoor track.",
+    twitterDescription:
+      "Find public running tracks in NYC and Boston.",
+    keywords: [
+      "public running track",
+      "outdoor running track",
+      "find running track",
+      "running track NYC",
+      "running track Boston",
+      "400m track",
+      "free running track",
+    ],
+  },
   nyc: {
     city: "nyc",
     displayName: "New York City",
@@ -94,8 +122,8 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
 };
 
 export function getCityConfig(): CityConfig {
-  const city = process.env.NEXT_PUBLIC_CITY ?? "nyc";
-  return CITY_CONFIGS[city] ?? CITY_CONFIGS["nyc"];
+  const city = process.env.NEXT_PUBLIC_CITY ?? "landing";
+  return CITY_CONFIGS[city] ?? CITY_CONFIGS["landing"];
 }
 
 export function getTrackById(id: string): Track | undefined {
