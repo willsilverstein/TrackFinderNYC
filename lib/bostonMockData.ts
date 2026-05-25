@@ -1,70 +1,69 @@
 import type { Track } from "./types";
 
 // Boston-area public running tracks
-// Coordinates sourced from OpenStreetMap / Google Maps verification
-// Surface type marked "Unknown" where not publicly documented — needs field verification
+// Coordinates sourced from runtrack.run (OpenStreetMap data) — verified Dec 2024
+// Surface types confirmed via runtrack.run where available
 export const BOSTON_TRACKS: Track[] = [
   {
-    // Source: urbnparks.com/boston/back-bay-fens + BostonParks
-    // Athletic track at Clemente Field inside the Back Bay Fens
-    // Adjacent to the Museum of Fine Arts and Fenway neighborhood
+    // Source: runtrack.run/track/clemente-field
+    // Synthetic track inside the Back Bay Fens park, at Roberto Clemente Field
+    // Address: 145 Park Drive, Fenway/Roxbury Crossing
     id: "boston-1",
     reviewSummary:
-      "A centrally located track tucked inside the historic Back Bay Fens. Easy to access from the Green Line and popular with Fenway-area runners. No lighting limits it to daylight use, but the park setting makes it one of the more pleasant spots to run in the city. Surface condition varies seasonally — best in warmer months.",
-    name: "Back Bay Fens — Clemente Field Track",
-    lat: 42.34192,
-    lon: -71.10606,
+      "A centrally located synthetic track tucked inside the historic Back Bay Fens. Easy to access from the Green Line and popular with Fenway-area runners. Lighting confirmed by runtrack.run. Surface condition varies seasonally — best in warmer months.",
+    name: "Clemente Field Track",
+    lat: 42.34070,
+    lon: -71.09742,
     distance: 0.0,
     rating: 4.0,
     reviewCount: 52,
-    surface: "Unknown",
+    surface: "Synthetic",
     lanes: null,
-    lighting: false,
+    lighting: true,
     hours: "Dawn – Dusk",
     publicHours:
-      "Open to the public during daylight hours. No reservation required. Part of the Boston Parks system — no posted restrictions on casual use.",
+      "Open to the public during daylight hours. No reservation required. Part of the Boston Parks system. Green Line (Fenway/Longwood stops) is closest T access.",
     publicAccessType: "open",
     access: "public",
     cost: "Free",
-    tags: ["400m", "no lighting", "park track", "Fenway", "Back Bay Fens", "Green Line"],
+    tags: ["synthetic", "floodlit", "park track", "Fenway", "Back Bay Fens", "Green Line"],
     osmType: "way",
     osmId: 0,
   },
   {
-    // Source: urbnparks.com/boston/east-boston-memorial-park
-    // Large park track in East Boston — listed as open 24 hours by urbnparks
+    // Source: runtrack.run/track/east-boston-memorial-stadium
+    // 400m synthetic, 6 lanes — Sartori Stadium / Transportation Way, East Boston
     id: "boston-2",
     reviewSummary:
-      "One of the few Boston-area tracks listed with 24-hour access, making it a practical option for early-morning or late-evening runs. East Boston is well-connected by the Blue Line, and the park has a neighborhood feel. No lighting on the track itself, so nighttime use depends on ambient light from the park perimeter.",
-    name: "East Boston Memorial Park Track",
-    lat: 42.37372,
-    lon: -71.03891,
+      "A solid 6-lane synthetic track in East Boston with lighting — one of the few Boston-area public tracks you can use after dark. Well-connected by the Blue Line. The stadium setting gives it a more athletic feel than a typical park track.",
+    name: "East Boston Memorial Stadium Track",
+    lat: 42.37150,
+    lon: -71.02926,
     distance: 0.0,
     rating: 3.8,
     reviewCount: 38,
-    surface: "Unknown",
-    lanes: null,
-    lighting: false,
-    hours: "Open 24 hours",
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: true,
+    hours: "Dawn – Dusk",
     publicHours:
-      "Open 24 hours, 7 days a week. No reservation required. Blue Line (Airport station) is the nearest T stop.",
+      "Open to the public during park hours. No reservation required. Blue Line (Airport station) is the nearest T stop.",
     publicAccessType: "open",
     access: "public",
     cost: "Free",
-    tags: ["24-hour access", "no lighting", "park track", "East Boston", "Blue Line"],
+    tags: ["synthetic", "6-lane", "floodlit", "stadium track", "East Boston", "Blue Line"],
     osmType: "way",
     osmId: 0,
   },
   {
-    // Source: urbnparks.com/boston/moakley-park
-    // 58-acre park with full athletic track in South Boston
-    // Near Carson Beach, ocean views of Old Harbor
+    // Source: mapcarta.com / Boston Parks — runtrack.run does not list Moakley
+    // Track behind the main athletic fields, 446 Old Colony Ave, South Boston
     id: "boston-3",
     reviewSummary:
-      "Moakley Park is South Boston's biggest athletic complex, and the track is one of its flagship amenities. The park is enormous — 58 acres — so the track rarely feels crowded. Ocean views of Old Harbor are a genuine perk. No lights means you're limited to daylight, but with easy Red Line access and ample parking, this is a top pick in Southie.",
+      "Moakley Park is South Boston's biggest athletic complex, and the track is one of its flagship amenities. The park is 58 acres — the track rarely feels crowded. Ocean views of Old Harbor are a genuine perk. Easy Red Line access and ample parking.",
     name: "Moakley Park Track",
-    lat: 42.33158,
-    lon: -71.04497,
+    lat: 42.32592,
+    lon: -71.04933,
     distance: 0.0,
     rating: 4.1,
     reviewCount: 74,
@@ -82,153 +81,148 @@ export const BOSTON_TRACKS: Track[] = [
     osmId: 0,
   },
   {
-    // Source: urbnparks.com/boston/charlestown-high-school
-    // Athletic track behind Charlestown High School
-    // Community access during non-school hours
+    // Source: runtrack.run/track/charlestown-community-center
+    // BCYF Charlestown — 400m synthetic, 6 lanes, lighting
+    // Address: Medford Street, Charlestown (Little Mystic Access Area)
     id: "boston-4",
     reviewSummary:
-      "Charlestown's only public track, located behind the high school on a hill with partial views of the neighborhood. Open to the community from dawn to dusk when school is not in session — typical for Boston-area school tracks. The surface is in solid shape compared to some neighborhood alternatives. Worth the short walk up from the Orange Line.",
-    name: "Charlestown High School Track",
-    lat: 42.37732,
-    lon: -71.06063,
+      "The BCYF Charlestown track is a 6-lane synthetic oval with lighting — a reliable community track in Charlestown. Managed by Boston Centers for Youth & Families. Lighting makes it usable outside of daylight hours, which is a significant plus over many neighborhood tracks.",
+    name: "BCYF Charlestown Track",
+    lat: 42.38066,
+    lon: -71.05963,
     distance: 0.0,
     rating: 3.7,
     reviewCount: 29,
-    surface: "Unknown",
-    lanes: null,
-    lighting: false,
-    hours: "Dawn – Dusk (non-school hours)",
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: true,
+    hours: "Dawn – Dusk (check BCYF schedule)",
     publicHours:
-      "Open to the community dawn to dusk when school is not in session. Avoid during school hours and scheduled athletic events. No formal reservation system — community access is informal.",
+      "Open to the community. Hours may vary with BCYF programming — check boston.gov/departments/boston-centers-youth-families/bcyf-charlestown for current hours.",
     publicAccessType: "conditional",
     access: "public",
     cost: "Free",
-    tags: ["school track", "no lighting", "community access", "Charlestown", "Dawn-Dusk"],
+    tags: ["synthetic", "6-lane", "floodlit", "community track", "Charlestown", "BCYF"],
     osmType: "way",
     osmId: 0,
   },
   {
-    // Source: urbnparks.com/boston/madison-high-school-fields + LetsRun community
-    // Track at Madison Park Technical Vocational High School, Roxbury
-    // Near Ruggles Orange Line station
+    // Source: runtrack.run/track/madison-park-highschool-track
+    // 400m synthetic, 8 lanes — Madison Park Court, Roxbury Crossing
     id: "boston-5",
     reviewSummary:
-      "A neighborhood track in the heart of Roxbury, steps from the Ruggles Orange Line stop. Public access is informal — available when no school or athletic events are scheduled. The Reggie Lewis Track and Athletic Center is nearby for indoor alternatives. Worth checking the school calendar before making the trip.",
+      "A full 8-lane synthetic track at Madison Park High School in Roxbury, right off the Orange Line. Lighting confirmed. Public access is informal — available when no school or athletic events are scheduled. The lane count makes it one of the wider public tracks in Boston.",
     name: "Madison Park High School Track",
-    lat: 42.32898,
-    lon: -71.08548,
+    lat: 42.33229,
+    lon: -71.08713,
     distance: 0.0,
     rating: 3.5,
     reviewCount: 21,
-    surface: "Unknown",
-    lanes: null,
-    lighting: null,
+    surface: "Synthetic",
+    lanes: 8,
+    lighting: true,
     hours: "Dawn – Dusk (non-school hours)",
     publicHours:
       "Community access when school is not in session. Avoid during school hours and scheduled team practices. Orange Line (Ruggles station) is the nearest T stop.",
     publicAccessType: "conditional",
     access: "public",
     cost: "Free",
-    tags: ["school track", "community access", "Roxbury", "Orange Line", "Ruggles"],
+    tags: ["synthetic", "8-lane", "floodlit", "school track", "Roxbury", "Orange Line", "Ruggles"],
     osmType: "way",
     osmId: 0,
   },
   {
-    // Source: urbnparks.com/boston/downes-field
-    // Brookline Parks Department — Downes Field, off Clinton St
-    // Synthetic turf multi-purpose field with surrounding track
-    // Note: Dogs not permitted in the fenced track/field area
+    // Source: runtrack.run/track/harry-downes-field
+    // 400m synthetic, 6 lanes — 51 Jamaica Road, Brookline Village
+    // Rated "great" quality on runtrack.run
     id: "boston-6",
     reviewSummary:
-      "A well-maintained Brookline Parks facility with a synthetic turf field and surrounding track. The fencing keeps dogs out, which runners appreciate. Dawn-to-dusk hours are consistent with other Brookline parks. The neighborhood is quiet and the track doesn't get heavy use, making it a reliably open option without the crowds of city-proper parks.",
-    name: "Downes Field Track",
-    lat: 42.33463,
-    lon: -71.12063,
+      "A highly-rated 6-lane synthetic track in Brookline Village — runtrack.run users rate it as 'great' quality. Regular users describe it as a well-maintained, uncrowded option. Dogs not permitted in the fenced track area. Dawn-to-dusk hours are consistent with Brookline Parks facilities.",
+    name: "Harry Downes Field Track",
+    lat: 42.32459,
+    lon: -71.11870,
     distance: 0.0,
-    rating: 4.0,
+    rating: 4.2,
     reviewCount: 33,
-    surface: "Unknown",
-    lanes: null,
-    lighting: false,
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: true,
     hours: "Dawn – Dusk",
     publicHours:
       "Open to the public dawn to dusk. No reservation required. Note: dogs not permitted in the fenced track and field area. Brookline Parks Department facility.",
     publicAccessType: "open",
     access: "public",
     cost: "Free",
-    tags: ["no lighting", "park track", "Brookline", "Dawn-Dusk", "no dogs", "synthetic turf field"],
+    tags: ["synthetic", "6-lane", "floodlit", "Brookline", "Dawn-Dusk", "no dogs"],
     osmType: "way",
     osmId: 0,
   },
   {
-    // Source: urbnparks.com/boston/danehy-park
-    // 50-acre Cambridge Parks Department facility in North Cambridge
-    // Athletic track & field on south end of park; multiple soccer fields, baseball diamonds
-    // Near Alewife Red Line station; 3 parking lots
+    // Source: runtrack.run/track/danehy-park-outdoor-track
+    // 400m synthetic, 6 lanes, lighting — 39 Sherman Street, North Cambridge
+    // Rated "ok" quality; parkrun held here every Saturday
     id: "boston-7",
     reviewSummary:
-      "Danehy Park is North Cambridge's biggest athletic complex — 50 acres with a full athletic track & field, soccer fields, batting cages, and a dog run. The track gets consistent use from Cambridge run clubs and MIT-area runners looking for outdoor space. Alewife Red Line access is a plus. Restrooms are not available at the park, which is a notable downside.",
+      "Danehy Park is North Cambridge's biggest athletic complex — 50 acres with a 6-lane synthetic track. Hosts a weekly parkrun every Saturday morning. Regular users describe it as generally chill and uncrowded. Alewife Red Line access is a plus. Note: no restrooms in the park.",
     name: "Danehy Park Track",
-    lat: 42.38431,
-    lon: -71.12851,
+    lat: 42.38955,
+    lon: -71.13659,
     distance: 0.0,
     rating: 4.1,
     reviewCount: 61,
-    surface: "Unknown",
-    lanes: null,
-    lighting: null,
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: true,
     hours: "Dawn – Dusk",
     publicHours:
-      "Open to the public during park hours (dawn to dusk). No reservation required. Nearest T stop is Alewife (Red Line). Three parking lots on-site. Note: no restrooms in the park.",
+      "Open to the public during park hours (dawn to dusk). No reservation required. Weekly parkrun every Saturday morning. Nearest T stop is Alewife (Red Line). Note: no restrooms in the park.",
     publicAccessType: "open",
     access: "public",
     cost: "Free",
-    tags: ["park track", "Cambridge", "North Cambridge", "50-acre park", "Red Line", "Alewife"],
+    tags: ["synthetic", "6-lane", "floodlit", "park track", "Cambridge", "North Cambridge", "parkrun", "Red Line", "Alewife"],
     osmType: "way",
     osmId: 0,
   },
   {
-    // Source: LetsRun community + MIT Athletics
-    // Outdoor 400m track at MIT Briggs Field, off Vassar St, Cambridge
-    // Informally open to public when no MIT team practices scheduled
-    // Commonly used by local run clubs (BAA, November Project)
+    // Source: runtrack.run/track/henry-g-steinbrenner-stadium
+    // MIT's outdoor 400m synthetic, 8 lanes — Vassar Street, Cambridgeport
+    // Informally open to the public when no MIT team practices
     id: "boston-8",
     reviewSummary:
-      "MIT's outdoor track at Briggs Field is one of the better-maintained surfaces in Cambridge and a well-known drop-in option for the local running community. Access is informal — the track is open when no MIT team practices are scheduled, which is most early mornings and weekend afternoons. Popular with run clubs; expect company on Tuesday and Thursday evenings.",
-    name: "MIT Briggs Field Track",
-    lat: 42.35941,
-    lon: -71.09447,
+      "MIT's Steinbrenner Stadium is a full 8-lane 400m synthetic track with lighting on Vassar Street in Cambridge. One of the best-spec public-access tracks in the Boston area. Open informally when no MIT team practices are scheduled — most reliable early mornings and weekend afternoons.",
+    name: "MIT Steinbrenner Stadium Track",
+    lat: 42.35795,
+    lon: -71.09777,
     distance: 0.0,
     rating: 4.3,
     reviewCount: 88,
     surface: "Synthetic",
-    lanes: null,
+    lanes: 8,
     lighting: true,
     hours: "Open when no team practice (check MIT Athletics)",
     publicHours:
-      "Open informally to the public when no MIT team practices are scheduled. Early mornings and weekend afternoons are the most reliably available times. Avoid weekday late afternoons during the academic year. No formal reservation required.",
+      "Open informally to the public when no MIT team practices are scheduled. Early mornings and weekend afternoons are the most reliably available times. Avoid weekday late afternoons during the academic year.",
     publicAccessType: "conditional",
     access: "public",
     cost: "Free",
-    tags: ["synthetic", "floodlit", "university track", "Cambridge", "MIT", "run club", "conditional access"],
+    tags: ["synthetic", "8-lane", "floodlit", "university track", "Cambridge", "MIT", "conditional access"],
     osmType: "way",
     osmId: 0,
   },
   {
-    // Source: urbnparks.com/boston/dilboy-stadium + Somerville Recreation
-    // Full track + turf field inside a larger Somerville sports complex with an outdoor pool
-    // On Alewife Brook Pkwy in Somerville — accessible from Alewife Red Line
+    // Source: runtrack.run/track/dilboy-stadium
+    // 400m synthetic, 8 lanes — Alewife Brook Pkwy, Davis Square, Somerville
     id: "boston-9",
     reviewSummary:
-      "Dilboy Stadium is Somerville's premier athletic facility — a full track and turf field inside a sports complex that also includes an outdoor pool. The track is well-maintained and relatively uncrowded outside of Somerville Recreation program hours. Red Line (Alewife) access makes it easy to reach from Cambridge or Boston. Surface and lane details need field verification.",
+      "Dilboy Stadium is Somerville's premier athletic facility — a full 8-lane synthetic track inside a sports complex near Davis Square. One of the wider tracks in the metro area. Check Somerville Recreation's schedule before visiting as programming can limit public access.",
     name: "Dilboy Stadium Track",
-    lat: 42.39228,
-    lon: -71.11162,
+    lat: 42.41200,
+    lon: -71.13193,
     distance: 0.0,
     rating: 4.0,
     reviewCount: 45,
-    surface: "Unknown",
-    lanes: null,
+    surface: "Synthetic",
+    lanes: 8,
     lighting: null,
     hours: "Dawn – Dusk (check Somerville Recreation schedule)",
     publicHours:
@@ -236,7 +230,7 @@ export const BOSTON_TRACKS: Track[] = [
     publicAccessType: "conditional",
     access: "public",
     cost: "Free",
-    tags: ["stadium track", "turf field", "Somerville", "Red Line", "Alewife", "pool complex"],
+    tags: ["synthetic", "8-lane", "stadium track", "Somerville", "Davis Square", "Red Line"],
     osmType: "way",
     osmId: 0,
   },
