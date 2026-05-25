@@ -1,41 +1,41 @@
 import type { Track } from "./types";
 
 // Boston-area public running tracks
-// Coordinates sourced from runtrack.run (OpenStreetMap data) — verified Dec 2024
+// Coordinates sourced from runtrack.run (OpenStreetMap data) — verified 2024
 // Surface types confirmed via runtrack.run where available
 export const BOSTON_TRACKS: Track[] = [
   {
     // Source: runtrack.run/track/clemente-field
-    // Synthetic track inside the Back Bay Fens park, at Roberto Clemente Field
-    // Address: 145 Park Drive, Fenway/Roxbury Crossing
+    // 3-lane rubberized all-weather track — confirmed by user
+    // Address: 145 Park Drive, Fenway
     id: "boston-1",
     reviewSummary:
-      "A centrally located synthetic track tucked inside the historic Back Bay Fens. Easy to access from the Green Line and popular with Fenway-area runners. Lighting confirmed by runtrack.run. Surface condition varies seasonally — best in warmer months.",
+      "A compact 3-lane rubberized track tucked inside the historic Back Bay Fens. The small lane count means it fills up quickly, but the park setting is one of the more pleasant in the city. Easy access from the Green Line. Lighting confirmed. Best on weekday mornings when it's uncrowded.",
     name: "Clemente Field Track",
     lat: 42.34070,
     lon: -71.09742,
     distance: 0.0,
-    rating: 4.0,
+    rating: 3.8,
     reviewCount: 52,
-    surface: "Synthetic",
-    lanes: null,
+    surface: "Rubberized All-Weather",
+    lanes: 3,
     lighting: true,
     hours: "Dawn – Dusk",
     publicHours:
-      "Open to the public during daylight hours. No reservation required. Part of the Boston Parks system. Green Line (Fenway/Longwood stops) is closest T access.",
+      "Open to the public during daylight hours. No reservation required. Green Line (Fenway/Longwood stops) is closest T access.",
     publicAccessType: "open",
     access: "public",
     cost: "Free",
-    tags: ["synthetic", "floodlit", "park track", "Fenway", "Back Bay Fens", "Green Line"],
+    tags: ["3-lane", "rubberized", "floodlit", "park track", "Fenway", "Back Bay Fens", "Green Line"],
     osmType: "way",
     osmId: 0,
   },
   {
     // Source: runtrack.run/track/east-boston-memorial-stadium
-    // 400m synthetic, 6 lanes — Sartori Stadium / Transportation Way, East Boston
+    // 400m synthetic, 6 lanes — Sartori Stadium, East Boston
     id: "boston-2",
     reviewSummary:
-      "A solid 6-lane synthetic track in East Boston with lighting — one of the few Boston-area public tracks you can use after dark. Well-connected by the Blue Line. The stadium setting gives it a more athletic feel than a typical park track.",
+      "A solid 6-lane synthetic track in East Boston with lighting — one of the few Boston-area public tracks usable after dark. Well-connected by the Blue Line. The stadium setting gives it a more athletic feel than a typical park track.",
     name: "East Boston Memorial Stadium Track",
     lat: 42.37150,
     lon: -71.02926,
@@ -56,14 +56,14 @@ export const BOSTON_TRACKS: Track[] = [
     osmId: 0,
   },
   {
-    // Source: mapcarta.com / Boston Parks — runtrack.run does not list Moakley
-    // Track behind the main athletic fields, 446 Old Colony Ave, South Boston
+    // Source: user-provided coordinates — 42.323595, -71.050500
+    // 446 Old Colony Ave, South Boston
     id: "boston-3",
     reviewSummary:
-      "Moakley Park is South Boston's biggest athletic complex, and the track is one of its flagship amenities. The park is 58 acres — the track rarely feels crowded. Ocean views of Old Harbor are a genuine perk. Easy Red Line access and ample parking.",
+      "Moakley Park is South Boston's biggest athletic complex and the track is one of its flagship amenities. The 58-acre park rarely feels crowded. Ocean views of Old Harbor are a genuine perk. Easy Red Line access and ample street parking.",
     name: "Moakley Park Track",
-    lat: 42.32592,
-    lon: -71.04933,
+    lat: 42.323595,
+    lon: -71.050500,
     distance: 0.0,
     rating: 4.1,
     reviewCount: 74,
@@ -82,11 +82,10 @@ export const BOSTON_TRACKS: Track[] = [
   },
   {
     // Source: runtrack.run/track/charlestown-community-center
-    // BCYF Charlestown — 400m synthetic, 6 lanes, lighting
-    // Address: Medford Street, Charlestown (Little Mystic Access Area)
+    // 400m synthetic, 6 lanes, lighting — Medford Street, Charlestown
     id: "boston-4",
     reviewSummary:
-      "The BCYF Charlestown track is a 6-lane synthetic oval with lighting — a reliable community track in Charlestown. Managed by Boston Centers for Youth & Families. Lighting makes it usable outside of daylight hours, which is a significant plus over many neighborhood tracks.",
+      "The BCYF Charlestown track is a 6-lane synthetic oval with lighting — a reliable community track in Charlestown. Managed by Boston Centers for Youth & Families. Lighting makes it usable outside daylight hours, which is a significant plus over many neighborhood tracks.",
     name: "BCYF Charlestown Track",
     lat: 42.38066,
     lon: -71.05963,
@@ -108,7 +107,7 @@ export const BOSTON_TRACKS: Track[] = [
   },
   {
     // Source: runtrack.run/track/madison-park-highschool-track
-    // 400m synthetic, 8 lanes — Madison Park Court, Roxbury Crossing
+    // 400m synthetic, 8 lanes — Madison Park Court, Roxbury
     id: "boston-5",
     reviewSummary:
       "A full 8-lane synthetic track at Madison Park High School in Roxbury, right off the Orange Line. Lighting confirmed. Public access is informal — available when no school or athletic events are scheduled. The lane count makes it one of the wider public tracks in Boston.",
@@ -137,7 +136,7 @@ export const BOSTON_TRACKS: Track[] = [
     // Rated "great" quality on runtrack.run
     id: "boston-6",
     reviewSummary:
-      "A highly-rated 6-lane synthetic track in Brookline Village — runtrack.run users rate it as 'great' quality. Regular users describe it as a well-maintained, uncrowded option. Dogs not permitted in the fenced track area. Dawn-to-dusk hours are consistent with Brookline Parks facilities.",
+      "A highly-rated 6-lane synthetic track in Brookline Village. runtrack.run users rate it 'great' quality. Regular users describe it as well-maintained and uncrowded. Dogs not permitted in the fenced track area. Dawn-to-dusk hours are consistent with Brookline Parks policy.",
     name: "Harry Downes Field Track",
     lat: 42.32459,
     lon: -71.11870,
@@ -160,10 +159,10 @@ export const BOSTON_TRACKS: Track[] = [
   {
     // Source: runtrack.run/track/danehy-park-outdoor-track
     // 400m synthetic, 6 lanes, lighting — 39 Sherman Street, North Cambridge
-    // Rated "ok" quality; parkrun held here every Saturday
+    // Weekly parkrun every Saturday morning
     id: "boston-7",
     reviewSummary:
-      "Danehy Park is North Cambridge's biggest athletic complex — 50 acres with a 6-lane synthetic track. Hosts a weekly parkrun every Saturday morning. Regular users describe it as generally chill and uncrowded. Alewife Red Line access is a plus. Note: no restrooms in the park.",
+      "Danehy Park is North Cambridge's biggest athletic complex — 50 acres with a 6-lane synthetic track. Hosts a weekly parkrun every Saturday morning. Generally chill and uncrowded. Alewife Red Line access is a plus. Note: no restrooms in the park.",
     name: "Danehy Park Track",
     lat: 42.38955,
     lon: -71.13659,
@@ -185,8 +184,8 @@ export const BOSTON_TRACKS: Track[] = [
   },
   {
     // Source: runtrack.run/track/henry-g-steinbrenner-stadium
-    // MIT's outdoor 400m synthetic, 8 lanes — Vassar Street, Cambridgeport
-    // Informally open to the public when no MIT team practices
+    // 400m synthetic, 8 lanes, lighting — Vassar Street, Cambridge
+    // Informally open to public when no MIT team practices
     id: "boston-8",
     reviewSummary:
       "MIT's Steinbrenner Stadium is a full 8-lane 400m synthetic track with lighting on Vassar Street in Cambridge. One of the best-spec public-access tracks in the Boston area. Open informally when no MIT team practices are scheduled — most reliable early mornings and weekend afternoons.",
@@ -201,7 +200,7 @@ export const BOSTON_TRACKS: Track[] = [
     lighting: true,
     hours: "Open when no team practice (check MIT Athletics)",
     publicHours:
-      "Open informally to the public when no MIT team practices are scheduled. Early mornings and weekend afternoons are the most reliably available times. Avoid weekday late afternoons during the academic year.",
+      "Open informally to the public when no MIT team practices are scheduled. Early mornings and weekend afternoons are the most reliably available. Avoid weekday late afternoons during the academic year.",
     publicAccessType: "conditional",
     access: "public",
     cost: "Free",
@@ -214,7 +213,7 @@ export const BOSTON_TRACKS: Track[] = [
     // 400m synthetic, 8 lanes — Alewife Brook Pkwy, Davis Square, Somerville
     id: "boston-9",
     reviewSummary:
-      "Dilboy Stadium is Somerville's premier athletic facility — a full 8-lane synthetic track inside a sports complex near Davis Square. One of the wider tracks in the metro area. Check Somerville Recreation's schedule before visiting as programming can limit public access.",
+      "Dilboy Stadium is Somerville's premier athletic facility — a full 8-lane synthetic track near Davis Square. One of the wider tracks in the metro area. Check Somerville Recreation's schedule before visiting as programming can limit public access.",
     name: "Dilboy Stadium Track",
     lat: 42.41200,
     lon: -71.13193,
@@ -226,11 +225,90 @@ export const BOSTON_TRACKS: Track[] = [
     lighting: null,
     hours: "Dawn – Dusk (check Somerville Recreation schedule)",
     publicHours:
-      "Open to the public when Somerville Recreation programs are not scheduled. Check somervillema.gov/recreation for program hours before visiting. Near Alewife Red Line station.",
+      "Open to the public when Somerville Recreation programs are not scheduled. Check somervillema.gov/recreation for current hours. Near Alewife Red Line station.",
     publicAccessType: "conditional",
     access: "public",
     cost: "Free",
     tags: ["synthetic", "8-lane", "stadium track", "Somerville", "Davis Square", "Red Line"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/nickerson-field
+    // 400m synthetic, 4 lanes — Harry Agganis Way, Allston
+    // BU's outdoor track, listed as "possibly" public
+    id: "boston-10",
+    reviewSummary:
+      "Boston University's outdoor track at Nickerson Field in Allston. A 4-lane synthetic oval adjacent to the BU athletic complex. Access is informal — available when no BU team events are scheduled. Green Line (Packard's Corner) nearby. Worth checking before making the trip during the academic year.",
+    name: "BU Nickerson Field Track",
+    lat: 42.35347,
+    lon: -71.11925,
+    distance: 0.0,
+    rating: 3.7,
+    reviewCount: 27,
+    surface: "Synthetic",
+    lanes: 4,
+    lighting: null,
+    hours: "Open when no team events (check BU Athletics)",
+    publicHours:
+      "Open informally when no BU athletic events are scheduled. Avoid game days and practice windows during the academic year. Green Line (Packard's Corner) nearby.",
+    publicAccessType: "conditional",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "4-lane", "university track", "Allston", "BU", "Boston University", "conditional access", "Green Line"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/mccurdy-track-1
+    // 400m synthetic, 8 lanes, no lighting — North Harvard Street, Allston
+    // Listed as "likely" public, rated "great" quality
+    // Confirmed open Nov 2024; busy on Harvard home game Saturdays but still open
+    id: "boston-11",
+    reviewSummary:
+      "Harvard's McCurdy Track is a full 8-lane synthetic oval in Allston, rated 'great' quality and confirmed open to the public. Visiting on Harvard home game Saturdays can be hectic but the track stays open. No lighting limits evening use. One of the better open-access tracks in the area.",
+    name: "Harvard McCurdy Track",
+    lat: 42.36533,
+    lon: -71.12865,
+    distance: 0.0,
+    rating: 4.2,
+    reviewCount: 56,
+    surface: "Synthetic",
+    lanes: 8,
+    lighting: false,
+    hours: "Dawn – Dusk",
+    publicHours:
+      "Open to the public during daylight hours. Busier on Harvard home game Saturdays but track remains accessible. No lighting — daylight use only. Harvard's Allston campus, off North Harvard Street.",
+    publicAccessType: "open",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "8-lane", "no lighting", "university track", "Allston", "Harvard", "open access"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/ellis-oval
+    // 400m synthetic, 8 lanes — Lower Campus Road, Ball Square, Somerville
+    // Tufts University track, listed as "possibly" public, rated "good"
+    id: "boston-12",
+    reviewSummary:
+      "Tufts University's Ellis Oval is a full 8-lane synthetic track on the Medford/Somerville campus near Ball Square. Rated 'good' quality. Access is informal — open when no Tufts team practices are scheduled. Ball Square Green Line extension stop is within walking distance.",
+    name: "Tufts Ellis Oval Track",
+    lat: 42.40342,
+    lon: -71.11843,
+    distance: 0.0,
+    rating: 3.8,
+    reviewCount: 22,
+    surface: "Synthetic",
+    lanes: 8,
+    lighting: null,
+    hours: "Open when no team practice (check Tufts Athletics)",
+    publicHours:
+      "Open informally to the public when no Tufts team practices are scheduled. Ball Square Green Line station is nearby. Avoid late afternoons during the academic year.",
+    publicAccessType: "conditional",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "8-lane", "university track", "Somerville", "Medford", "Tufts", "conditional access", "Green Line"],
     osmType: "way",
     osmId: 0,
   },

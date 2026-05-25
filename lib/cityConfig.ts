@@ -58,7 +58,7 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
     siteUrl: "https://boston.trackfindernyc.com",
     mapCenter: [42.3601, -71.0589],
     mapZoom: 13,
-    mapBounds: [[42.22, -71.19], [42.45, -70.92]],
+    mapBounds: [[42.20, -71.25], [42.50, -70.88]],
     minZoom: 11,
     tracks: BOSTON_TRACKS,
     neighborhoods: [
