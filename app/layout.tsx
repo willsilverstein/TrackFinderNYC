@@ -2,57 +2,45 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
+import { getCityConfig } from "@/lib/cityConfig";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const SITE_URL = "https://www.trackfindernyc.com";
+const city = getCityConfig();
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(city.siteUrl),
   title: {
-    default: "TrackFinderNYC – Find Public Running Tracks in NYC",
-    template: "%s | TrackFinderNYC",
+    default: city.metaTitle,
+    template: `%s | ${city.siteName}`,
   },
-  description:
-    "Find every public running track in New York City. Browse 50+ tracks across Manhattan, Brooklyn, Queens, the Bronx, and Staten Island. Filter by surface, lighting, lanes, and public access hours.",
-  keywords: [
-    "running track NYC",
-    "public running track New York",
-    "NYC track and field",
-    "outdoor running track Manhattan",
-    "running track Brooklyn",
-    "running track Queens",
-    "running track Bronx",
-    "400m track NYC",
-    "free running track New York City",
-  ],
+  description: city.metaDescription,
+  keywords: city.keywords,
   verification: {
     google: "sXY5ZVqiudgJcxIimdsPLUJFUCw9tQfEt3xvbJeY5oY",
   },
-  authors: [{ name: "TrackFinderNYC" }],
-  creator: "TrackFinderNYC",
+  authors: [{ name: city.siteName }],
+  creator: city.siteName,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: SITE_URL,
-    siteName: "TrackFinderNYC",
-    title: "TrackFinderNYC – Find Public Running Tracks in NYC",
-    description:
-      "Find every public running track in New York City. 50+ tracks across all five boroughs with surface, lighting, lanes, and public access hours.",
+    url: city.siteUrl,
+    siteName: city.siteName,
+    title: city.metaTitle,
+    description: city.ogDescription,
     images: [
       {
         url: "/og-default.png",
         width: 1200,
         height: 630,
-        alt: "TrackFinderNYC – NYC Running Track Map",
+        alt: `${city.siteName} – Running Track Map`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TrackFinderNYC – Find Public Running Tracks in NYC",
-    description:
-      "Find every public running track in New York City across all five boroughs.",
+    title: city.metaTitle,
+    description: city.twitterDescription,
     images: ["/og-default.png"],
   },
   robots: {
@@ -66,7 +54,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: SITE_URL,
+    canonical: city.siteUrl,
   },
 };
 

@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 import TrackCard from "@/components/TrackCard";
 import { useTheme } from "@/components/ThemeProvider";
-import { MOCK_TRACKS } from "@/lib/mockData";
+import { getCityConfig } from "@/lib/cityConfig";
 import { computeScore } from "@/lib/scoring";
 import type { Track } from "@/lib/types";
 
@@ -21,8 +21,8 @@ const TrackMap = dynamic(() => import("@/components/TrackMap"), {
   ),
 });
 
-// Default centre: Central Park, NYC
-const DEFAULT_CENTER: [number, number] = [40.7829, -73.9654];
+const cityConfig = getCityConfig();
+const DEFAULT_CENTER: [number, number] = cityConfig.mapCenter;
 
 type GeoState = "idle" | "requesting" | "granted" | "denied";
 type AccessFilter = "all" | "open" | "conditional" | "closed";
@@ -109,8 +109,8 @@ export default function HomePage() {
   const [center, setCenter] = useState<[number, number]>(DEFAULT_CENTER);
   const [userLocation, setUserLocation] = useState<[number, number] | null>(null);
   const [geoState, setGeoState] = useState<GeoState>("idle");
-  const [locationLabel, setLocationLabel] = useState<string>("New York City");
-  const [tracks] = useState<Track[]>(MOCK_TRACKS);
+  const [locationLabel, setLocationLabel] = useState<string>(cityConfig.displayName);
+  const [tracks] = useState<Track[]>(cityConfig.tracks);
   const [activeTrackId, setActiveTrackId] = useState<string | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(() =>
     typeof window !== "undefined" ? window.innerWidth >= 768 : true

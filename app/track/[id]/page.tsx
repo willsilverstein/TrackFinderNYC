@@ -1,29 +1,29 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getTrackById, MOCK_TRACKS } from "@/lib/mockData";
+import { getTrackById, getCityConfig } from "@/lib/cityConfig";
 import { computeScore, scoreColor } from "@/lib/scoring";
 
-const SITE_URL = "https://www.trackfindernyc.com";
+const city = getCityConfig();
+const SITE_URL = city.siteUrl;
 
 interface Props {
   params: { id: string };
 }
 
-// Pre-generate paths for mock IDs so Next can statically render them
+// Pre-generate paths so Next can statically render all track pages
 export function generateStaticParams() {
-  return MOCK_TRACKS.map((t) => ({ id: t.id }));
+  return city.tracks.map((t) => ({ id: t.id }));
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-/** Extract borough from tags, falling back to "New York City" */
+/** Extract neighborhood/borough from tags using city-specific list */
 function getBoroughFromTags(tags: string[]): string {
-  const boroughs = ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island"];
-  for (const b of boroughs) {
-    if (tags.some((t) => t.toLowerCase().includes(b.toLowerCase()))) return b;
+  for (const n of city.neighborhoods) {
+    if (tags.some((t) => t.toLowerCase().includes(n.toLowerCase()))) return n;
   }
-  return "New York City";
+  return city.displayName;
 }
 
 /** Build a plain-English access label for meta descriptions */
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `${track.name} — ${[lanes, surface].filter(Boolean).join(" ")} track in ${borough}`;
   const description =
-    `${track.name} is a ${[lanes, surface].filter(Boolean).join(" ")} running track in ${borough}, NYC. ` +
+    `${track.name} is a ${[lanes, surface].filter(Boolean).join(" ")} running track in ${borough}, ${city.displayName}. ` +
     `Currently ${access}. ` +
     (track.lighting === true ? "Floodlit for evening runs. " : "") +
     (track.cost === "Free" ? "Free to use. " : "") +
