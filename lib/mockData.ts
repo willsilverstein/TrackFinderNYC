@@ -1160,6 +1160,33 @@ export const MOCK_TRACKS: Track[] = [
     osmType: "way",
     osmId: 0,
   },
+  {
+    // Source: NYC DOE / Bklyner / MileSplit
+    // 1605 Avenue K, Midwood, Brooklyn — DOE athletic field renovated ~2018
+    // PSAL Brooklyn Borough Championships hosted here as recently as 2022
+    // DOE extended use policy allows community access outside school hours
+    id: "mock-53",
+    reviewSummary:
+      "Midwood Field is a DOE athletic track at 1605 Avenue K in the heart of Midwood, Brooklyn — renovated around 2018 and the site of PSAL Brooklyn Borough Championships as recently as 2022. The renovation produced a quality synthetic surface suited for competition. Public access is available outside school hours under the DOE extended use policy. The field fills a real gap: the nearest alternatives are Marine Park to the south and Prospect Park to the north, both over 2 miles away.",
+    name: "Midwood Field Track",
+    lat: 40.6221,
+    lon: -73.9633,
+    distance: 0.0,
+    rating: 3.9,
+    reviewCount: 28,
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: null,
+    hours: "Non-school hours",
+    publicHours:
+      "Open to the community outside of school hours under the NYC DOE extended use policy. Avoid weekday afternoons during the school year when team practices are scheduled. Located at 1605 Avenue K between East 16th and East 17th Streets in Midwood.",
+    publicAccessType: "conditional",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "school track", "Brooklyn", "Midwood", "Flatbush", "DOE", "PSAL"],
+    osmType: "way",
+    osmId: 0,
+  },
 ];
 
 export const MOCK_REVIEWS: Review[] = [
