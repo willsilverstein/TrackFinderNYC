@@ -9,6 +9,8 @@ export interface CityConfig {
   siteUrl: string;           // canonical base URL for this city's deployment
   mapCenter: [number, number]; // [lat, lon]
   mapZoom: number;
+  mapBounds: [[number, number], [number, number]]; // [[swLat, swLon], [neLat, neLon]]
+  minZoom: number;
   tracks: Track[];
   neighborhoods: string[];   // borough / municipality names used for filtering
   metaTitle: string;
@@ -26,6 +28,8 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
     siteUrl: "https://www.trackfindernyc.com",
     mapCenter: [40.7128, -74.006],
     mapZoom: 12,
+    mapBounds: [[40.477, -74.259], [40.917, -73.700]],
+    minZoom: 10,
     tracks: MOCK_TRACKS,
     neighborhoods: ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island"],
     metaTitle: "TrackFinderNYC – Find Public Running Tracks in NYC",
@@ -54,6 +58,8 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
     siteUrl: "https://boston.trackfindernyc.com",
     mapCenter: [42.3601, -71.0589],
     mapZoom: 13,
+    mapBounds: [[42.22, -71.19], [42.45, -70.92]],
+    minZoom: 11,
     tracks: BOSTON_TRACKS,
     neighborhoods: [
       "Cambridge", "Somerville", "Brookline",

@@ -19,6 +19,8 @@ interface TrackMapProps {
   activeTrackId?: string | null;
   onTrackClick?: (track: Track) => void;
   darkMode?: boolean;
+  mapBounds?: [[number, number], [number, number]];
+  minZoom?: number;
 }
 
 export default function TrackMap({
@@ -28,6 +30,8 @@ export default function TrackMap({
   activeTrackId,
   onTrackClick,
   darkMode = false,
+  mapBounds,
+  minZoom = 10,
 }: TrackMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -57,17 +61,15 @@ export default function TrackMap({
         shadowUrl:     "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
       });
 
-      const NYC_BOUNDS = L.latLngBounds(
-        L.latLng(40.477, -74.259), // SW corner
-        L.latLng(40.917, -73.700)  // NE corner
-      );
+      const bounds = mapBounds
+        ? L.latLngBounds(L.latLng(mapBounds[0][0], mapBounds[0][1]), L.latLng(mapBounds[1][0], mapBounds[1][1]))
+        : undefined;
       const map = L.map(mapRef.current, {
         center,
         zoom: 12,
         zoomControl: false,
-        maxBounds: NYC_BOUNDS,
-        maxBoundsViscosity: 1.0, // hard stop — no rubber-banding outside bounds
-        minZoom: 10,             // prevent zooming out far enough to escape
+        ...(bounds && { maxBounds: bounds, maxBoundsViscosity: 1.0 }),
+        minZoom,
       });
       L.control.zoom({ position: "bottomright" }).addTo(map);
 

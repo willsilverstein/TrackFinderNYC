@@ -258,6 +258,8 @@ export default function HomePage() {
             activeTrackId={activeTrackId}
             onTrackClick={(t) => setActiveTrackId(t.id)}
             darkMode={isDark}
+            mapBounds={cityConfig.mapBounds}
+            minZoom={cityConfig.minZoom}
           />
           {/* Dynamic location badge */}
           <div className="absolute top-3 right-3 z-10 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-300 shadow">
