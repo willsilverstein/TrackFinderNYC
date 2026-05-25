@@ -66,15 +66,16 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
       "South Boston", "East Boston", "Charlestown", "Roxbury",
       "Jamaica Plain", "Dorchester", "Fenway", "Allston", "Brighton",
       "Hyde Park", "Mattapan", "Roslindale", "West Roxbury",
+      "Medford", "Quincy", "Watertown", "Revere", "Malden",
       "Boston",
     ],
     metaTitle: "TrackFinderBoston – Find Public Running Tracks in Boston",
     metaDescription:
-      "Find every public running track in Boston and the surrounding area. Browse tracks across Boston, Cambridge, Somerville, and Brookline. Filter by surface, lighting, and public access hours.",
+      "Find every public running track in Boston and the surrounding area. Browse 18+ tracks across Boston, Cambridge, Somerville, Brookline, Quincy, Medford, Malden, Revere, and Watertown. Filter by surface, lighting, and access hours.",
     ogDescription:
-      "Find every public running track in Boston. Tracks across Boston, Cambridge, Somerville, and Brookline with surface, lighting, and access hours.",
+      "Find every public running track in the Boston metro area. 18+ tracks across Boston, Cambridge, Somerville, Brookline, and beyond with surface, lighting, and access hours.",
     twitterDescription:
-      "Find every public running track in Boston, Cambridge, Somerville, and Brookline.",
+      "Find every public running track in Boston and the surrounding metro area.",
     keywords: [
       "running track Boston",
       "public running track Boston",
@@ -82,6 +83,10 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
       "outdoor running track Cambridge",
       "running track Somerville",
       "running track Brookline",
+      "running track Quincy",
+      "running track Medford",
+      "running track Malden",
+      "running track Revere",
       "400m track Boston",
       "free running track Boston",
     ],

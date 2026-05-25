@@ -56,27 +56,28 @@ export const BOSTON_TRACKS: Track[] = [
     osmId: 0,
   },
   {
-    // Source: user-provided coordinates — 42.323595, -71.050500
-    // 446 Old Colony Ave, South Boston
+    // Source: runtrack.run/track/columbus-park-outdoor-track (same location as Moakley Park complex)
+    // 400m synthetic, 8 lanes, lighting — Columbia Road, South Boston
+    // Rated "good" on runtrack.run; confirmed open Aug 2024
     id: "boston-3",
     reviewSummary:
-      "Moakley Park is South Boston's biggest athletic complex and the track is one of its flagship amenities. The 58-acre park rarely feels crowded. Ocean views of Old Harbor are a genuine perk. Easy Red Line access and ample street parking.",
-    name: "Moakley Park Track",
-    lat: 42.323595,
-    lon: -71.050500,
+      "The Columbus Park / Moakley Park track is South Boston's flagship outdoor oval — a full 8-lane synthetic track with lighting inside Boston's 58-acre waterfront athletic complex. Confirmed open to the public by a recent visitor (Aug 2024). Ocean views of Old Harbor are a genuine perk. Easy Red Line access and ample street parking.",
+    name: "Columbus Park Track",
+    lat: 42.323604,
+    lon: -71.050485,
     distance: 0.0,
     rating: 4.1,
     reviewCount: 74,
-    surface: "Unknown",
-    lanes: null,
-    lighting: false,
+    surface: "Synthetic",
+    lanes: 8,
+    lighting: true,
     hours: "Dawn – Dusk",
     publicHours:
-      "Open to the public during daylight hours. No reservation required. Red Line (JFK/UMass station) is the nearest T stop. Street parking available around the park.",
+      "Open to the public during daylight hours. Confirmed open with field use in August 2024. No reservation required. Red Line (JFK/UMass station) is the nearest T stop. Street parking available around the park.",
     publicAccessType: "open",
     access: "public",
     cost: "Free",
-    tags: ["no lighting", "park track", "South Boston", "Southie", "ocean views", "58-acre park", "Red Line"],
+    tags: ["synthetic", "8-lane", "floodlit", "park track", "South Boston", "Southie", "ocean views", "58-acre park", "Red Line"],
     osmType: "way",
     osmId: 0,
   },
@@ -309,6 +310,157 @@ export const BOSTON_TRACKS: Track[] = [
     access: "public",
     cost: "Free",
     tags: ["synthetic", "8-lane", "university track", "Somerville", "Medford", "Tufts", "conditional access", "Green Line"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/hormel-stadium
+    // 440yd synthetic, 6 lanes — Medford
+    id: "boston-13",
+    reviewSummary:
+      "Hormel Stadium is Medford's main outdoor athletic facility — a 6-lane synthetic oval with a longer-than-standard 440-yard circumference. A reliable community track north of the city. Street parking is available nearby.",
+    name: "Hormel Stadium Track",
+    lat: 42.40840,
+    lon: -71.09682,
+    distance: 0.0,
+    rating: 3.7,
+    reviewCount: 18,
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: null,
+    hours: "Dawn – Dusk",
+    publicHours:
+      "Open to the public during daylight hours when no events are scheduled. Check Medford Recreation for programming conflicts.",
+    publicAccessType: "conditional",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "6-lane", "440yd", "stadium track", "Medford"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/faxon-field
+    // 400m synthetic, 6 lanes, lighting — Quincy
+    // Rated "great" quality on runtrack.run
+    id: "boston-14",
+    reviewSummary:
+      "Faxon Field at Quincy High School is one of the best-rated community tracks in the metro area — runtrack.run users give it 'great' quality. A full 6-lane synthetic oval with lighting, making it usable after dark. Worth the short Red Line ride to Quincy Center.",
+    name: "Faxon Field Track",
+    lat: 42.25563,
+    lon: -70.99825,
+    distance: 0.0,
+    rating: 4.2,
+    reviewCount: 31,
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: true,
+    hours: "Dawn – Dusk (non-school hours)",
+    publicHours:
+      "Community access when school is not in session. Generally available evenings and weekends. Red Line (Quincy Center station) is the nearest T stop.",
+    publicAccessType: "conditional",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "6-lane", "floodlit", "school track", "Quincy", "Red Line", "Quincy Center"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/victory-field
+    // 400m synthetic, 6 lanes, lighting — Watertown
+    id: "boston-15",
+    reviewSummary:
+      "Victory Field is Watertown's main athletic oval — a 6-lane synthetic track with lighting near the Charles River. A good option for runners in the western suburbs. Street parking and a quiet neighborhood setting.",
+    name: "Victory Field Track",
+    lat: 42.37331,
+    lon: -71.18112,
+    distance: 0.0,
+    rating: 3.8,
+    reviewCount: 24,
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: true,
+    hours: "Dawn – Dusk",
+    publicHours:
+      "Open to the public during daylight hours and into the evening when lights are on. No reservation required.",
+    publicAccessType: "open",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "6-lane", "floodlit", "park track", "Watertown"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/west-roxbury-hs-athletics-fields
+    // 400m synthetic, 6 lanes, lighting — West Roxbury Education Complex
+    id: "boston-16",
+    reviewSummary:
+      "The West Roxbury Education Complex track is a 6-lane synthetic oval with lighting in the far southwest corner of Boston. A standard school track with community access outside school hours. Relatively uncrowded given its distance from the city core.",
+    name: "West Roxbury HS Track",
+    lat: 42.28265,
+    lon: -71.17666,
+    distance: 0.0,
+    rating: 3.5,
+    reviewCount: 14,
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: true,
+    hours: "Dawn – Dusk (non-school hours)",
+    publicHours:
+      "Community access when school is not in session. Evenings and weekends are generally open. Located at the West Roxbury Education Complex off Veterans of Foreign Wars Parkway.",
+    publicAccessType: "conditional",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "6-lane", "floodlit", "school track", "West Roxbury", "Boston"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/harry-della-russo-stadium
+    // 400m synthetic, 6 lanes, lighting — Park Avenue, Revere
+    id: "boston-17",
+    reviewSummary:
+      "Harry Della Russo Stadium is Revere's main athletic venue — a 6-lane synthetic track with lighting a few stops up the Blue Line from downtown Boston. A solid community track that's rarely overcrowded. Blue Line (Revere Beach or Beachmont) is the nearest T access.",
+    name: "Harry Della Russo Stadium Track",
+    lat: 42.41143,
+    lon: -71.01554,
+    distance: 0.0,
+    rating: 3.7,
+    reviewCount: 19,
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: true,
+    hours: "Dawn – Dusk",
+    publicHours:
+      "Open to the public during park hours. Blue Line (Revere Beach or Beachmont stations) is the nearest T access. Street parking available on Park Avenue.",
+    publicAccessType: "open",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "6-lane", "floodlit", "stadium track", "Revere", "Blue Line"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/macdonald-stadium
+    // 400m synthetic, 6 lanes — Pearl Street, Malden
+    id: "boston-18",
+    reviewSummary:
+      "MacDonald Stadium is Malden's main community track — a 6-lane synthetic oval near the center of the city. Orange Line access via Malden Center makes it convenient from downtown Boston. A straightforward neighborhood track that fills a gap north of Somerville.",
+    name: "MacDonald Stadium Track",
+    lat: 42.42540,
+    lon: -71.07570,
+    distance: 0.0,
+    rating: 3.6,
+    reviewCount: 16,
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: null,
+    hours: "Dawn – Dusk",
+    publicHours:
+      "Open to the public during daylight hours. Orange Line (Malden Center station) is the nearest T stop.",
+    publicAccessType: "open",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "6-lane", "stadium track", "Malden", "Orange Line", "Malden Center"],
     osmType: "way",
     osmId: 0,
   },
