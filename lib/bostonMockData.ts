@@ -464,4 +464,157 @@ export const BOSTON_TRACKS: Track[] = [
     osmType: "way",
     osmId: 0,
   },
+  {
+    // Source: runtrack.run/track/dedham-public-schools
+    // 400m synthetic, 6 lanes, lighting — Recreation Road, Dedham
+    // Rated "good" — user confirmed open during school hours, no issues
+    id: "boston-19",
+    reviewSummary:
+      "Dedham's community track at the Public Schools complex is one of the more welcoming in the metro area — a user report confirms running here during school hours without any issues. 6-lane synthetic with lighting. A solid option for runners south of the city.",
+    name: "Dedham High School Track",
+    lat: 42.24619,
+    lon: -71.15981,
+    distance: 0.0,
+    rating: 3.8,
+    reviewCount: 17,
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: true,
+    hours: "Non-school hours (community use confirmed during school hours too)",
+    publicHours:
+      "Community access generally available — a runner confirmed using the track during school hours without incident. Lighting available for evening runs. Located off Recreation Road in Dedham.",
+    publicAccessType: "open",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "6-lane", "floodlit", "school track", "Dedham"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/healy-field (DiFazio Field)
+    // 400m synthetic, 8 lanes, no lighting — Coulton Park, Needham
+    // Rated "good" quality
+    id: "boston-20",
+    reviewSummary:
+      "DiFazio Field in Needham is a full 8-lane synthetic track rated 'good' quality — wider than most community tracks in the metro area. No lighting limits it to daylight use, but the surface and lane count make it worth the trip for a quality workout.",
+    name: "DiFazio Field Track",
+    lat: 42.27405,
+    lon: -71.22345,
+    distance: 0.0,
+    rating: 3.9,
+    reviewCount: 14,
+    surface: "Synthetic",
+    lanes: 8,
+    lighting: false,
+    hours: "Dawn – Dusk (non-school hours)",
+    publicHours:
+      "Open to the community during daylight hours when school is not in session. Located at Coulton Park Extension in Needham. No lighting — daylight use only.",
+    publicAccessType: "conditional",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "8-lane", "no lighting", "school track", "Needham"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/harris-field
+    // 400m synthetic, 6 lanes, lighting — Belmont High School, Concord Ave
+    id: "boston-21",
+    reviewSummary:
+      "Harris Field at Belmont High School is a 6-lane synthetic track with lighting on Concord Avenue. A reliable community track in the western suburbs, convenient for runners between Cambridge and Watertown. Evenings and weekends are the most reliably open times.",
+    name: "Harris Field Track",
+    lat: 42.39500,
+    lon: -71.16915,
+    distance: 0.0,
+    rating: 3.6,
+    reviewCount: 12,
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: true,
+    hours: "Non-school hours",
+    publicHours:
+      "Open to the community outside school hours. Lighting makes it usable into the evening. Located at Belmont High School on Concord Avenue.",
+    publicAccessType: "conditional",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "6-lane", "floodlit", "school track", "Belmont"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/stokinger-field
+    // 400m synthetic, 6 lanes, no lighting — Milton Academy, Centre Street, Milton
+    // Rated "good" quality — private school but informally open
+    id: "boston-22",
+    reviewSummary:
+      "Stokinger Field at Milton Academy is a 6-lane synthetic track rated 'good' quality — one of the better-maintained tracks in the south suburbs. It's a private school facility, but runners report informal access outside school hours. No lighting limits it to daylight use.",
+    name: "Stokinger Field Track",
+    lat: 42.25866,
+    lon: -71.07202,
+    distance: 0.0,
+    rating: 3.7,
+    reviewCount: 11,
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: false,
+    hours: "Dawn – Dusk (informal access)",
+    publicHours:
+      "Informal community access during daylight hours. Private school facility — access is not guaranteed. Best to visit early mornings or weekends. Located at Milton Academy on Centre Street.",
+    publicAccessType: "conditional",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "6-lane", "no lighting", "school track", "Milton", "Milton Academy"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/milton-high-field
+    // 400m synthetic, 6 lanes — Brooks Field, Gile Road, Milton
+    id: "boston-23",
+    reviewSummary:
+      "Milton High School's Brooks Field track is a 6-lane synthetic oval on Gile Road — a public school facility with typical community access outside school hours. A straightforward option for runners in Milton and the surrounding south suburbs.",
+    name: "Milton High School Track",
+    lat: 42.25119,
+    lon: -71.09003,
+    distance: 0.0,
+    rating: 3.5,
+    reviewCount: 9,
+    surface: "Synthetic",
+    lanes: 6,
+    lighting: null,
+    hours: "Non-school hours",
+    publicHours:
+      "Open to the community outside school and practice hours. Located at Brooks Field on Gile Road in Milton.",
+    publicAccessType: "conditional",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "6-lane", "school track", "Milton"],
+    osmType: "way",
+    osmId: 0,
+  },
+  {
+    // Source: runtrack.run/track/braintree-high-school
+    // 400m synthetic, 8 lanes — Town Street, Braintree
+    id: "boston-24",
+    reviewSummary:
+      "Braintree High School's track is a full 8-lane synthetic oval — one of the wider community tracks south of Boston. Easy Red Line access via Braintree station makes it reachable without a car. Community access available outside school hours.",
+    name: "Braintree High School Track",
+    lat: 42.20675,
+    lon: -71.01919,
+    distance: 0.0,
+    rating: 3.6,
+    reviewCount: 13,
+    surface: "Synthetic",
+    lanes: 8,
+    lighting: null,
+    hours: "Non-school hours",
+    publicHours:
+      "Open to the community outside school hours. Red Line (Braintree station) is the nearest T stop. Located on Town Street in Braintree.",
+    publicAccessType: "conditional",
+    access: "public",
+    cost: "Free",
+    tags: ["synthetic", "8-lane", "school track", "Braintree", "Red Line"],
+    osmType: "way",
+    osmId: 0,
+  },
 ];
