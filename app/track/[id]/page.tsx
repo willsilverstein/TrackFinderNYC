@@ -1,7 +1,10 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { getTrackById, MOCK_TRACKS } from "@/lib/mockData";
 import { computeScore, scoreColor } from "@/lib/scoring";
+
+const SITE_URL = "https://www.trackfindernyc.com";
 
 interface Props {
   params: { id: string };
@@ -10,6 +13,76 @@ interface Props {
 // Pre-generate paths for mock IDs so Next can statically render them
 export function generateStaticParams() {
   return MOCK_TRACKS.map((t) => ({ id: t.id }));
+}
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+
+/** Extract borough from tags, falling back to "New York City" */
+function getBoroughFromTags(tags: string[]): string {
+  const boroughs = ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island"];
+  for (const b of boroughs) {
+    if (tags.some((t) => t.toLowerCase().includes(b.toLowerCase()))) return b;
+  }
+  return "New York City";
+}
+
+/** Build a plain-English access label for meta descriptions */
+function accessLabel(type: string): string {
+  if (type === "open") return "open to the public";
+  if (type === "closed") return "temporarily closed";
+  return "conditionally open";
+}
+
+// ── Per-track metadata ────────────────────────────────────────────────────────
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const track = getTrackById(params.id);
+  if (!track) return {};
+
+  const borough = getBoroughFromTags(track.tags);
+  const lanes = track.lanes ? `${track.lanes}-lane` : "";
+  const surface = track.surface ?? "running";
+  const access = accessLabel(track.publicAccessType);
+
+  const title = `${track.name} — ${[lanes, surface].filter(Boolean).join(" ")} track in ${borough}`;
+  const description =
+    `${track.name} is a ${[lanes, surface].filter(Boolean).join(" ")} running track in ${borough}, NYC. ` +
+    `Currently ${access}. ` +
+    (track.lighting === true ? "Floodlit for evening runs. " : "") +
+    (track.cost === "Free" ? "Free to use. " : "") +
+    `TrackScore™: ${computeScore(track).composite.toFixed(1)}/10.`;
+
+  const url = `${SITE_URL}/track/${track.id}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "website",
+      url,
+      title,
+      description,
+      images: [
+        {
+          // ESRI satellite tile as a social preview
+          url:
+            `https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/export` +
+            `?f=image&format=png32&transparent=false&size=1200,630` +
+            `&bboxSR=4326&imageSR=4326` +
+            `&bbox=${track.lon - 0.006},${track.lat - 0.0033},${track.lon + 0.006},${track.lat + 0.0033}`,
+          width: 1200,
+          height: 630,
+          alt: `Satellite view of ${track.name}`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
 }
 
 export default function TrackDetailPage({ params }: Props) {
@@ -105,8 +178,50 @@ export default function TrackDetailPage({ params }: Props) {
     },
   ];
 
+  // ── JSON-LD structured data ─────────────────────────────────────────────────
+  const borough = getBoroughFromTags(track.tags);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    name: track.name,
+    description: track.reviewSummary,
+    url: `${SITE_URL}/track/${track.id}`,
+    sport: "Running",
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: track.lat,
+      longitude: track.lon,
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: borough,
+      addressRegion: "NY",
+      addressCountry: "US",
+    },
+    ...(track.hours
+      ? { openingHours: track.hours }
+      : {}),
+    ...(track.cost === "Free"
+      ? { isAccessibleForFree: true }
+      : {}),
+    amenityFeature: [
+      { "@type": "LocationFeatureSpecification", name: "Surface", value: track.surface },
+      ...(track.lanes != null
+        ? [{ "@type": "LocationFeatureSpecification", name: "Lanes", value: track.lanes }]
+        : []),
+      ...(track.lighting != null
+        ? [{ "@type": "LocationFeatureSpecification", name: "Lighting", value: track.lighting }]
+        : []),
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+      {/* JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Back nav */}
       <nav className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-700 sticky top-0 z-10">
         <div className="mx-auto max-w-[430px] px-4 h-14 flex items-center gap-3">
