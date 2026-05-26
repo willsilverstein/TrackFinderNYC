@@ -87,7 +87,7 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
     siteUrl: "https://philly.trackfindernyc.com",
     mapCenter: [40.0, -75.16],
     mapZoom: 12,
-    mapBounds: [[39.87, -75.40], [40.14, -74.96]],
+    mapBounds: [[39.87, -75.40], [40.14, -74.90]],
     minZoom: 10,
     tracks: PHILLY_TRACKS,
     neighborhoods: [
@@ -95,12 +95,13 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
       "Northwest Philadelphia", "Northeast Philadelphia",
       "Germantown", "Roxborough", "Chestnut Hill", "Wynnefield",
       "University City", "Lower Merion", "Abington",
+      "Cheltenham", "Delaware County", "Cherry Hill", "Bensalem",
     ],
     metaTitle: "TrackFinderPhilly – Find Public Running Tracks in Philadelphia",
     metaDescription:
-      "Find every public running track in Philadelphia and the surrounding area. Browse 14+ tracks across South Philly, North Philly, Germantown, Roxborough, University City, Lower Merion, and beyond. Filter by surface, lighting, and access hours.",
+      "Find every public running track in Philadelphia and the surrounding area. Browse 21+ tracks across South Philly, North Philly, Germantown, Roxborough, University City, Lower Merion, Cherry Hill, and beyond. Filter by surface, lighting, and access hours.",
     ogDescription:
-      "Find every public running track in the Philadelphia metro area. 14+ tracks across Philly, Lower Merion, Abington, and beyond with surface, lighting, and access hours.",
+      "Find every public running track in the Philadelphia metro area. 21+ tracks across Philly, Lower Merion, Cheltenham, Ridley, Cherry Hill NJ, Bensalem, and beyond with surface, lighting, and access hours.",
     twitterDescription:
       "Find every public running track in Philadelphia and the surrounding metro area.",
     keywords: [
