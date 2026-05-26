@@ -1,6 +1,7 @@
 import type { Track } from "./types";
 import { MOCK_TRACKS } from "./mockData";
 import { BOSTON_TRACKS } from "./bostonMockData";
+import { PHILLY_TRACKS } from "./phillyMockData";
 
 export interface CityConfig {
   city: string;
@@ -77,6 +78,43 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
       "running track Bronx",
       "400m track NYC",
       "free running track New York City",
+    ],
+  },
+  philadelphia: {
+    city: "philadelphia",
+    displayName: "Philadelphia",
+    siteName: "TrackFinderPhilly",
+    siteUrl: "https://philly.trackfindernyc.com",
+    mapCenter: [40.0, -75.16],
+    mapZoom: 12,
+    mapBounds: [[39.87, -75.40], [40.14, -74.96]],
+    minZoom: 10,
+    tracks: PHILLY_TRACKS,
+    neighborhoods: [
+      "South Philadelphia", "North Philadelphia", "West Philadelphia",
+      "Northwest Philadelphia", "Northeast Philadelphia",
+      "Germantown", "Roxborough", "Chestnut Hill", "Wynnefield",
+      "University City", "Lower Merion", "Abington",
+    ],
+    metaTitle: "TrackFinderPhilly – Find Public Running Tracks in Philadelphia",
+    metaDescription:
+      "Find every public running track in Philadelphia and the surrounding area. Browse 14+ tracks across South Philly, North Philly, Germantown, Roxborough, University City, Lower Merion, and beyond. Filter by surface, lighting, and access hours.",
+    ogDescription:
+      "Find every public running track in the Philadelphia metro area. 14+ tracks across Philly, Lower Merion, Abington, and beyond with surface, lighting, and access hours.",
+    twitterDescription:
+      "Find every public running track in Philadelphia and the surrounding metro area.",
+    keywords: [
+      "running track Philadelphia",
+      "public running track Philly",
+      "Philadelphia track and field",
+      "outdoor running track West Philadelphia",
+      "running track Germantown",
+      "running track Roxborough",
+      "running track Lower Merion",
+      "running track Abington",
+      "400m track Philadelphia",
+      "free running track Philadelphia",
+      "Penn Relays track",
     ],
   },
   boston: {

@@ -24,6 +24,16 @@ const CITIES = [
     emoji: "🦞",
     neighborhoods: ["Cambridge", "Somerville", "Brookline", "Quincy", "Medford"],
   },
+  {
+    key: "philadelphia",
+    name: "Philadelphia",
+    tagline: "City & surrounding suburbs",
+    description: "14+ public running tracks across South Philly, Germantown, Roxborough, University City, Lower Merion, Abington, and more.",
+    trackCount: 14,
+    url: "https://philly.trackfindernyc.com",
+    emoji: "🔔",
+    neighborhoods: ["South Philadelphia", "Germantown", "Roxborough", "University City", "Lower Merion"],
+  },
 ];
 
 export default function LandingPage() {
@@ -80,7 +90,7 @@ export default function LandingPage() {
         </div>
 
         {/* City cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl w-full">
           {CITIES.map((city) => (
             <a
               key={city.key}
