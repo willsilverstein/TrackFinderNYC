@@ -438,8 +438,8 @@ export const PHILLY_TRACKS: Track[] = [
   {
     id: "philly-28",
     name: "Camden Athletic Complex",
-    lat: 39.9468,
-    lon: -75.1290,
+    lat: 39.950036,
+    lon: -75.128525,
     rating: 0,
     reviewCount: 0,
     reviewSummary: "8-lane synthetic track at 401 Delaware Ave on the Camden waterfront, built on the former Campbell's Field site. A Camden County Parks facility shared with Rutgers-Camden athletics. Hosts track meets and has generous public hours — one of the most accessible tracks in the metro area.",
