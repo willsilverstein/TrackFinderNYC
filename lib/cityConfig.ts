@@ -97,6 +97,7 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
       "University City", "Lower Merion", "Abington",
       "Cheltenham", "Delaware County", "Cherry Hill", "Bensalem",
       "East Falls", "Fox Chase", "Olney",
+      "Camden", "Gloucester City",
     ],
     metaTitle: "TrackFinderPhilly – Find Public Running Tracks in Philadelphia",
     metaDescription:
