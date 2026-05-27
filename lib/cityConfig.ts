@@ -96,12 +96,13 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
       "Germantown", "Roxborough", "Chestnut Hill", "Wynnefield",
       "University City", "Lower Merion", "Abington",
       "Cheltenham", "Delaware County", "Cherry Hill", "Bensalem",
+      "East Falls", "Fox Chase", "Olney",
     ],
     metaTitle: "TrackFinderPhilly – Find Public Running Tracks in Philadelphia",
     metaDescription:
-      "Find every public running track in Philadelphia and the surrounding area. Browse 21+ tracks across South Philly, North Philly, Germantown, Roxborough, University City, Lower Merion, Cherry Hill, and beyond. Filter by surface, lighting, and access hours.",
+      "Find every public running track in Philadelphia and the surrounding area. Browse 25+ tracks across South Philly, North Philly, Germantown, Roxborough, University City, Lower Merion, Cherry Hill, and beyond. Filter by surface, lighting, and access hours.",
     ogDescription:
-      "Find every public running track in the Philadelphia metro area. 21+ tracks across Philly, Lower Merion, Cheltenham, Ridley, Cherry Hill NJ, Bensalem, and beyond with surface, lighting, and access hours.",
+      "Find every public running track in the Philadelphia metro area. 25+ tracks across Philly, Lower Merion, Cheltenham, Ridley, Cherry Hill NJ, Bensalem, and beyond with surface, lighting, and access hours.",
     twitterDescription:
       "Find every public running track in Philadelphia and the surrounding metro area.",
     keywords: [
