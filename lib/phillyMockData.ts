@@ -77,8 +77,8 @@ export const PHILLY_TRACKS: Track[] = [
   {
     id: "philly-5",
     name: "Wetzler Track (La Salle University)",
-    lat: 40.0338,
-    lon: -75.1700,
+    lat: 40.0393,
+    lon: -75.1533,
     rating: 0,
     reviewCount: 0,
     reviewSummary: "La Salle University track on West Olney Avenue, open to residents of the 19138, 19141, and 19144 zip codes. Dawn to dusk outside school team use.",
@@ -420,8 +420,8 @@ export const PHILLY_TRACKS: Track[] = [
   {
     id: "philly-24",
     name: "Greenawalt Track (Germantown Friends School)",
-    lat: 40.0452,
-    lon: -75.1915,
+    lat: 40.02330,
+    lon: -75.18187,
     rating: 0,
     reviewCount: 0,
     reviewSummary: "Resurfaced in blue and orange in 2020, this track was gifted to Germantown Friends School by the Greenawalt family in 2003. Located at the same Midvale Ave complex as the PPR supersite.",
