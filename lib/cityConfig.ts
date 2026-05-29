@@ -182,9 +182,9 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
     ],
     metaTitle: "TrackFinderDC – Find Public Running Tracks in Washington DC",
     metaDescription:
-      "Find every public running track in Washington DC and the metro area. Browse 25+ tracks across DC, Arlington, Alexandria, Bethesda, Silver Spring, and Rockville. Filter by surface, lighting, and access hours.",
+      "Find every public running track in Washington DC and the metro area. Browse 28+ tracks across DC, Arlington, Alexandria, Bethesda, Silver Spring, McLean, Falls Church, and Annandale. Filter by surface, lighting, and access hours.",
     ogDescription:
-      "Find every public running track in the DC metro area. 25+ tracks across DC, Arlington, Alexandria, and Maryland suburbs with surface, lighting, and access hours.",
+      "Find every public running track in the DC metro area. 28+ tracks across DC, Arlington, Alexandria, and Maryland/Virginia suburbs with surface, lighting, and access hours.",
     twitterDescription:
       "Find every public running track in Washington DC and the surrounding metro area.",
     keywords: [
