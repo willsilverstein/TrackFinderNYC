@@ -23,8 +23,8 @@ export const DC_TRACKS: Track[] = [
   {
     id: "dc-2",
     name: "Benjamin Banneker High School Track",
-    lat: 38.916800,
-    lon: -77.028500,
+    lat: 38.911646,
+    lon: -77.026222,
     rating: 0,
     reviewCount: 0,
     reviewSummary: "Synthetic track at the new Banneker HS campus in Shaw (opened 2021). DC Department of Parks & Recreation manages public access on weekends. Entrances off Rhode Island Ave and 11th Street.",
@@ -41,8 +41,8 @@ export const DC_TRACKS: Track[] = [
   {
     id: "dc-3",
     name: "Cardozo Education Campus Track",
-    lat: 38.916000,
-    lon: -77.032200,
+    lat: 38.921083,
+    lon: -77.028435,
     rating: 0,
     reviewCount: 0,
     reviewSummary: "Synthetic track at Cardozo Education Campus at 13th and Clifton St NW in Columbia Heights. Open to the public during school days early mornings (6–8am) and evenings. Access depends on maintenance staff opening the gate — call ahead or check for a nearby open entry.",
@@ -494,8 +494,8 @@ export const DC_TRACKS: Track[] = [
   {
     id: "dc-31",
     name: "St. Albans School Track",
-    lat: 38.929400,
-    lon: -77.072800,
+    lat: 38.929032,
+    lon: -77.067551,
     rating: 0,
     reviewCount: 0,
     reviewSummary: "Track on the lower athletic fields of St. Albans School on the Cathedral Close, near the Washington National Cathedral. Private school track — access not publicly confirmed, call ahead.",
