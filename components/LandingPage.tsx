@@ -34,6 +34,16 @@ const CITIES = [
     emoji: "🔔",
     neighborhoods: ["South Philadelphia", "Germantown", "Roxborough", "University City", "Lower Merion"],
   },
+  {
+    key: "dc",
+    name: "Washington DC",
+    tagline: "DC & metro area",
+    description: "25+ public running tracks across DC, Arlington, Alexandria, Bethesda, Silver Spring, and Rockville — including DPR's premier Banneker Field.",
+    trackCount: 25,
+    url: "https://dc.trackfindernyc.com",
+    emoji: "🏛️",
+    neighborhoods: ["Shaw", "Georgetown", "Columbia Heights", "Arlington", "Bethesda"],
+  },
 ];
 
 export default function LandingPage() {

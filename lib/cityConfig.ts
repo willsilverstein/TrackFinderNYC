@@ -2,6 +2,7 @@ import type { Track } from "./types";
 import { MOCK_TRACKS } from "./mockData";
 import { BOSTON_TRACKS } from "./bostonMockData";
 import { PHILLY_TRACKS } from "./phillyMockData";
+import { DC_TRACKS } from "./dcMockData";
 
 export interface CityConfig {
   city: string;
@@ -159,6 +160,45 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
       "running track Revere",
       "400m track Boston",
       "free running track Boston",
+    ],
+  },
+  dc: {
+    city: "dc",
+    displayName: "Washington DC",
+    siteName: "TrackFinderDC",
+    siteUrl: "https://dc.trackfindernyc.com",
+    mapCenter: [38.9072, -77.0369],
+    mapZoom: 12,
+    mapBounds: [[38.79, -77.27], [39.15, -76.87]],
+    minZoom: 10,
+    tracks: DC_TRACKS,
+    neighborhoods: [
+      "Georgetown", "Columbia Heights", "Shaw", "Petworth",
+      "Bloomingdale", "Capitol Hill", "Tenleytown", "Friendship Heights",
+      "Northeast DC", "Southeast DC", "Anacostia", "Congress Heights",
+      "Ivy City", "Kingman Park", "Fort Totten",
+      "Arlington", "Alexandria",
+      "Bethesda", "Silver Spring", "Takoma Park", "Rockville",
+    ],
+    metaTitle: "TrackFinderDC – Find Public Running Tracks in Washington DC",
+    metaDescription:
+      "Find every public running track in Washington DC and the metro area. Browse 25+ tracks across DC, Arlington, Alexandria, Bethesda, Silver Spring, and Rockville. Filter by surface, lighting, and access hours.",
+    ogDescription:
+      "Find every public running track in the DC metro area. 25+ tracks across DC, Arlington, Alexandria, and Maryland suburbs with surface, lighting, and access hours.",
+    twitterDescription:
+      "Find every public running track in Washington DC and the surrounding metro area.",
+    keywords: [
+      "running track Washington DC",
+      "public running track DC",
+      "DC track and field",
+      "outdoor running track Arlington",
+      "running track Alexandria",
+      "running track Bethesda",
+      "running track Silver Spring",
+      "running track Rockville",
+      "400m track Washington DC",
+      "free running track DC",
+      "DPR track DC",
     ],
   },
 };
