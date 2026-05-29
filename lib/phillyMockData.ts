@@ -77,8 +77,8 @@ export const PHILLY_TRACKS: Track[] = [
   {
     id: "philly-5",
     name: "Wetzler Track (La Salle University)",
-    lat: 40.0393,
-    lon: -75.1533,
+    lat: 40.037205,
+    lon: -75.154012,
     rating: 0,
     reviewCount: 0,
     reviewSummary: "La Salle University track on West Olney Avenue, open to residents of the 19138, 19141, and 19144 zip codes. Dawn to dusk outside school team use.",
