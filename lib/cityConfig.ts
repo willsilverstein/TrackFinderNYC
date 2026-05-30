@@ -169,22 +169,23 @@ const CITY_CONFIGS: Record<string, CityConfig> = {
     siteUrl: "https://dc.trackfindernyc.com",
     mapCenter: [38.9072, -77.0369],
     mapZoom: 12,
-    mapBounds: [[38.79, -77.27], [39.15, -76.87]],
+    mapBounds: [[38.74, -77.27], [39.08, -76.85]],
     minZoom: 10,
     tracks: DC_TRACKS,
     neighborhoods: [
       "Georgetown", "Columbia Heights", "Shaw", "Petworth",
-      "Bloomingdale", "Capitol Hill", "Tenleytown", "Friendship Heights",
+      "Bloomingdale", "Tenleytown", "Friendship Heights",
       "Northeast DC", "Southeast DC", "Anacostia", "Congress Heights",
-      "Ivy City", "Kingman Park", "Fort Totten",
-      "Arlington", "Alexandria",
-      "Bethesda", "Silver Spring", "Takoma Park", "Rockville",
+      "Ivy City", "Kingman Park", "Fort Totten", "Eckington",
+      "Arlington", "Alexandria", "McLean", "Falls Church", "Annandale",
+      "Bethesda", "Silver Spring", "Takoma Park",
+      "Prince George's County", "Oxon Hill", "Fairmont Heights", "Bladensburg",
     ],
     metaTitle: "TrackFinderDC – Find Public Running Tracks in Washington DC",
     metaDescription:
-      "Find every public running track in Washington DC and the metro area. Browse 28+ tracks across DC, Arlington, Alexandria, Bethesda, Silver Spring, McLean, Falls Church, and Annandale. Filter by surface, lighting, and access hours.",
+      "Find every public running track in Washington DC and the metro area. Browse 46+ tracks across DC, Arlington, Alexandria, McLean, Falls Church, Bethesda, Silver Spring, and beyond. Filter by surface, lighting, and access hours.",
     ogDescription:
-      "Find every public running track in the DC metro area. 28+ tracks across DC, Arlington, Alexandria, and Maryland/Virginia suburbs with surface, lighting, and access hours.",
+      "Find every public running track in the DC metro area. 46+ tracks across DC, Arlington, Alexandria, and Maryland/Virginia suburbs with surface, lighting, and access hours.",
     twitterDescription:
       "Find every public running track in Washington DC and the surrounding metro area.",
     keywords: [
