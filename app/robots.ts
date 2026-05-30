@@ -1,11 +1,13 @@
 import type { MetadataRoute } from "next";
+import { getCityConfig } from "@/lib/cityConfig";
 
 export default function robots(): MetadataRoute.Robots {
+  const city = getCityConfig();
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.trackfindernyc.com/sitemap.xml",
+    sitemap: `${city.siteUrl}/sitemap.xml`,
   };
 }

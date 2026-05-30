@@ -33,6 +33,21 @@ function accessLabel(type: string): string {
   return "conditionally open";
 }
 
+/** Derive the US state abbreviation from track tags + city fallback */
+function getAddressRegion(tags: string[]): string {
+  const tagStr = tags.join(" ").toLowerCase();
+  if (tagStr.includes("maryland")) return "MD";
+  if (tagStr.includes("virginia")) return "VA";
+  if (tagStr.includes("new jersey")) return "NJ";
+  if (tagStr.includes("connecticut")) return "CT";
+  if (tagStr.includes("massachusetts")) return "MA";
+  const k = city.city;
+  if (k === "boston") return "MA";
+  if (k === "philadelphia") return "PA";
+  if (k === "dc") return "DC";
+  return "NY";
+}
+
 // ── Per-track metadata ────────────────────────────────────────────────────────
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -180,38 +195,64 @@ export default function TrackDetailPage({ params }: Props) {
 
   // ── JSON-LD structured data ─────────────────────────────────────────────────
   const borough = getBoroughFromTags(track.tags);
+  const addressRegion = getAddressRegion(track.tags);
+  const trackUrl = `${SITE_URL}/track/${track.id}`;
+
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SportsActivityLocation",
-    name: track.name,
-    description: track.reviewSummary,
-    url: `${SITE_URL}/track/${track.id}`,
-    sport: "Running",
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: track.lat,
-      longitude: track.lon,
-    },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: borough,
-      addressRegion: "NY",
-      addressCountry: "US",
-    },
-    ...(track.hours
-      ? { openingHours: track.hours }
-      : {}),
-    ...(track.cost === "Free"
-      ? { isAccessibleForFree: true }
-      : {}),
-    amenityFeature: [
-      { "@type": "LocationFeatureSpecification", name: "Surface", value: track.surface },
-      ...(track.lanes != null
-        ? [{ "@type": "LocationFeatureSpecification", name: "Lanes", value: track.lanes }]
-        : []),
-      ...(track.lighting != null
-        ? [{ "@type": "LocationFeatureSpecification", name: "Lighting", value: track.lighting }]
-        : []),
+    "@graph": [
+      {
+        "@type": "SportsActivityLocation",
+        name: track.name,
+        description: track.reviewSummary,
+        url: trackUrl,
+        sport: "Running",
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: track.lat,
+          longitude: track.lon,
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: borough,
+          addressRegion,
+          addressCountry: "US",
+        },
+        ...(track.publicHours ? { openingHoursSpecification: { "@type": "OpeningHoursSpecification", description: track.publicHours } } : {}),
+        isAccessibleForFree: track.cost == null || track.cost === "Free",
+        amenityFeature: [
+          { "@type": "LocationFeatureSpecification", name: "Surface", value: track.surface },
+          ...(track.lanes != null
+            ? [{ "@type": "LocationFeatureSpecification", name: "Lanes", value: track.lanes }]
+            : []),
+          ...(track.lighting != null
+            ? [{ "@type": "LocationFeatureSpecification", name: "Lighting", value: track.lighting }]
+            : []),
+          { "@type": "LocationFeatureSpecification", name: "Public Access", value: track.publicAccessType },
+        ],
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: city.siteName,
+            item: SITE_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: borough,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: track.name,
+            item: trackUrl,
+          },
+        ],
+      },
     ],
   };
 

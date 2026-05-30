@@ -10,11 +10,56 @@
 
 import LandingPage from "@/components/LandingPage";
 import MapPage from "@/components/MapPage";
+import { getCityConfig } from "@/lib/cityConfig";
 
 export default function Page() {
-  const city = process.env.NEXT_PUBLIC_CITY;
-  if (!city || city === "landing") {
-    return <LandingPage />;
+  const cityEnv = process.env.NEXT_PUBLIC_CITY;
+  const city = getCityConfig();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        name: city.siteName,
+        url: city.siteUrl,
+        description: city.metaDescription,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${city.siteUrl}/?q={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": "Organization",
+        name: "TrackFinder",
+        url: "https://www.trackfindernyc.com",
+        logo: "https://www.trackfindernyc.com/og-default.png",
+      },
+    ],
+  };
+
+  if (!cityEnv || cityEnv === "landing") {
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <LandingPage />
+      </>
+    );
   }
-  return <MapPage />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <MapPage />
+    </>
+  );
 }
